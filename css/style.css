@@ -40,69 +40,52 @@ body {
     color: var(--text-color);
 }
 
-
-
-
-/* COMECO DO HEADER */
-
-/* header base */
+/* HEADER */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     padding: 16px 24px;
-
     background-color: transparent;
 }
 
-/* logo */
 #container-logo {
     height: 60px;
     max-width: 100%;
     object-fit: contain;
 }
 
-/* nav */
-#container-nav ul {
+#container-nav {
     display: flex;
     gap: 20px;
+}
+
+#container-nav ul {
+    display: flex;
     list-style: none;
 }
 
-#form-busca input {
-    flex: 1;
-    padding: 5px 8px;
-    border-radius: 8px;
-    border: none;
-    font-size: 1rem;
+/* Link específico da página "Sobre" */
+#sobreNos {
+    text-decoration: none;
+    color: #CD1F81;
 }
 
-/* FIM DO HEADER */
-
-
-
-/* COMECO DO MAIN */
-
+/* MAIN */
 main {
-    background-color: transparent;
     padding: 32px;
+    background-color: transparent;
 }
 
-/* FIM DO MAIN */
-
-
-
-/* COMEÇO DO FOOTER */
-
+/* FOOTER */
 footer {
-    background-color: #95cefc04;
-    color: var(--text-color);
-    padding: 24px 32px;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
+    color: var(--text-color);
+    padding: 24px 32px;
+    background-color: #95cefc04;
 }
 
 #footer-content {
@@ -125,10 +108,6 @@ footer {
     font-size: 16px;
     line-height: 1.4;
 }
-
-/* FIM DO FOOTER */
-
-
 
 /* RESPONSIVIDADE */
 @media (max-width: 600px) {
