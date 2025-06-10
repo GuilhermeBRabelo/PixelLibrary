@@ -15,222 +15,215 @@
     box-sizing: border-box;
 }
 
-a {
-    text-decoration: none;
-    color: #fff;
-    font-size: 16px;
-    padding: 8px 12px;
-    transition: background 0.3s;
-}
-
-a:hover {
-    background-color: rgba(255, 255, 255, 0.027);
-    color: var(--link-color);
-    border-radius: 8px;
-    transition: 0.3s;
-}
-
-body {
-    background: linear-gradient(180deg, #313158, #171729, #0D0D1A);
-    background-repeat: no-repeat;
-    background-size: cover;
-
-    font-family: "Poppins", sans-serif;
-    font-size: 16px;
-    color: var(--text-color);
-}
-
-/* COMECO DO HEADER */
-
-/* header base */
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    padding: 16px 24px;
-
-    background-color: transparent;
-}
-
-/* logo */
-#container-logo img {
-    height: 60px;
-    max-width: 100%;
-    object-fit: contain;
-}
-
-/* nav */
-#container-nav ul {
-    display: flex;
-    gap: 20px;
-    list-style: none;
-}
-
-/* FIM DO HEADER */
 
 /* COMECO DO MAIN */
 
 main {
-    background-color: transparent;
-    padding: 32px;
+    flex-grow: 1;
+    /* Permite que o conteúdo principal ocupe o espaço restante */
+    padding: 2rem 1rem;
+    /* Preenchimento interno */
+    max-width: 1200px;
+    /* Largura máxima para o conteúdo */
+    margin: 0 auto;
+    /* Centraliza o conteúdo */
 }
 
-/* SECTION 1 - Info do Jogo */
-#container-informacoes-jogo {
+.library-title {
+    font-size: 2.5rem;
+    /* Tamanho da fonte */
+
+    font-weight: 700;
+    /* Negrito */
+
+    background: linear-gradient(to right, #8b059c, #FF2A6D);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    margin-bottom: 1.5rem;
+    /* Margem inferior */
+
+    text-align: left;
+    /* Alinha à esquerda */
+}
+
+/* Estilos para os filtros */
+.filters {
     display: flex;
+    /* Usa flexbox para os filtros */
+    gap: 0.75rem;
+    /* Espaçamento entre os filtros */
+    margin-bottom: 2rem;
+    /* Margem inferior */
     flex-wrap: wrap;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 24px;
-    margin-bottom: 48px;
+    /* Permite que os filtros quebrem linha */
 }
 
-#container-capa-jogo {
-    width: 200px;
-    height: 300px;
-    border-radius: 8px;
+.filter-tag {
+    background-color: #4a5568;
+    /* Cor de fundo da tag */
+    color: #e2e8f0;
+    /* Cor do texto da tag */
+    padding: 0.5rem 1rem;
+    /* Preenchimento */
+    border-radius: 9999px;
+    /* Bordas bem arredondadas (pill shape) */
+    font-size: 0.9rem;
+    /* Tamanho da fonte */
+    cursor: pointer;
+    /* Cursor de ponteiro */
+    transition: background-color 0.2s ease-in-out;
+    /* Transição suave */
+}
+
+.filter-tag:hover {
+    background-color: #60a5fa;
+    /* Cor de fundo azul no hover */
+}
+
+/* Estilos para a grade de jogos */
+.game-grid {
+    display: grid;
+    /* Usa grid para organizar os jogos */
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    /* Colunas responsivas */
+    gap: 1.5rem;
+    /* Espaçamento entre os cards */
+    justify-items: center;
+    /* Centraliza os itens no grid */
+}
+
+/* Estilos para cada card de jogo */
+.game-card {
+    /* background-color: #2d3748; */
+    /* Cor de fundo do card */
+    border-radius: 0.5rem;
+    /* Bordas arredondadas */
     overflow: hidden;
-    background-color: rgb(99, 5, 5);
-}
-
-#container-capa-jogo img {
+    /* Garante que a imagem não ultrapasse as bordas */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    /* Sombra */
+    /* border: 1px solid #4a5568; */
+    /* Borda sutil */
+    transition: transform 0.2s ease-in-out;
+    /* Transição suave ao passar o mouse */
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    /* Ocupa a largura total da coluna */
+    max-width: 200px;
+    /* Largura máxima para o card */
 }
 
-#container-descricao-jogo {
-    background-color: rgb(53, 3, 3);
-    padding: 20px;
-    border-radius: 8px;
+.game-card:hover {
+    transform: translateY(-5px);
+    /* Efeito de levantar ao passar o mouse */
+}
+
+.game-cover {
     width: 100%;
-    max-width: 600px;
-    color: white;
-}
-
-#container-descricao-jogo h2 {
-    font-size: 1.8rem;
-    margin-bottom: 12px;
-}
-
-#container-descricao-jogo p {
-    font-size: 0.95rem;
-    color: #ccc;
-    margin-bottom: 16px;
-}
-
-#container-descricao-jogo h3 {
-    font-size: 1rem;
-    line-height: 1.5;
-}
-
-/* SECTION 2 - Avaliações */
-#container-avaliacoes {
+    /* Ocupa a largura total do card */
+    height: 250px;
+    /* Altura fixa para a capa do jogo */
+    background-color: #4a5568;
+    /* Cor de fundo para o placeholder */
     display: flex;
-    flex-wrap: wrap;
-    gap: 24px;
+    /* Usa flexbox para centralizar o texto do placeholder */
+    align-items: center;
+    /* Centraliza verticalmente */
     justify-content: center;
+    /* Centraliza horizontalmente */
+    color: #a0aec0;
+    /* Cor do texto do placeholder */
+    font-size: 1rem;
+    /* Tamanho da fonte do placeholder */
+    text-align: center;
+    /* Centraliza o texto */
+    object-fit: cover;
+    /* Garante que a imagem preencha o espaço */
 }
 
-#container-avaliacao-global,
-#container-avaliacao-clientes {
-    background-color: #05e005;
-    color: white;
-    padding: 20px;
-    border-radius: 8px;
-    width: 100%;
-    max-width: 400px;
-    min-height: 150px;
+.game-info {
+    padding: 1rem;
+    /* Preenchimento interno */
+    display: flex;
+    /* Usa flexbox para alinhar o nome e a avaliação */
+    flex-direction: column;
+    /* Organiza em coluna */
+    align-items: center;
+    /* Centraliza o conteúdo */
+    text-align: center;
+    /* Centraliza o texto */
+}
+
+.game-info h3 {
+    font-size: 1.1rem;
+    /* Tamanho da fonte do título do jogo */
+    font-weight: 600;
+    /* Peso da fonte */
+    color: #ffffff;
+    /* Cor do texto branco */
+    margin-bottom: 0.5rem;
+    /* Margem inferior */
 }
 
 /* FIM DO MAIN */
 
-
-
-
-
-/* COMEÇO DO FOOTER */
-
-footer {
-    background-color: #95cefc04;
-    color: var(--text-color);
-    padding: 24px 32px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
-#footer-content {
-    max-width: 800px;
-    width: 100%;
-}
-
-#footer-content a {
-    display: block;
-    text-decoration: none;
-    margin-bottom: 12px;
-}
-
-#footer-content a:hover {
-    width: auto;
-}
-
-#footer-content p {
-    font-size: 16px;
-    line-height: 1.4;
-}
-
-/* FIM DO FOOTER */
-
-
-
-
-
-
-/* RESPONSIVIDADE */
 @media (max-width: 600px) {
     header {
         flex-direction: column;
-        align-items: center;
-        gap: 12px;
+        /* Empilha itens do cabeçalho em telas menores */
+        align-items: flex-start;
+        /* Alinha à esquerda */
     }
 
-    #container-logo img {
-        height: 48px;
+    .header-nav {
+        margin-top: 1rem;
+        /* Espaçamento superior para a navegação */
     }
 
-    #container-nav {
-        display: none;
-    }
-
-    main {
-        padding: 16px;
-    }
-
-    #container-capa-jogo {
-        width: 150px;
-        height: 225px;
-    }
-
-    #container-descricao-jogo {
+    .search-bar {
         width: 100%;
+        /* Busca ocupa largura total */
     }
 
-    #container-descricao-jogo h2 {
-        font-size: 1.5rem;
+    .search-bar input {
+        width: calc(100% - 40px);
+        /* Ajusta largura do input */
     }
 
-    footer {
-        padding: 16px 20px;
+    .search-bar input:focus {
+        width: calc(100% - 40px);
+        /* Mantém a largura ao focar */
     }
 
-    #footer-content p {
-        font-size: 0.85rem;
+    .library-title {
+        font-size: 2rem;
+        /* Reduz o tamanho do título da biblioteca */
     }
 
-    #footer-content a {
-        color: var(--link-color);
+    .filters {
+        justify-content: center;
+        /* Centraliza os filtros em telas menores */
+    }
+
+    .game-grid {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        /* Reduz o tamanho mínimo do card */
+    }
+
+    .game-cover {
+        height: 200px;
+        /* Reduz a altura da capa do jogo */
+    }
+}
+
+@media (max-width: 480px) {
+    .game-grid {
+        grid-template-columns: 1fr;
+        /* Uma coluna em telas muito pequenas */
+    }
+
+    .game-card {
+        max-width: 250px;
+        /* Limita a largura do card para centralizar melhor */
     }
 }
